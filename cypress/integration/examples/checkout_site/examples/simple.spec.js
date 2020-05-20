@@ -1,15 +1,13 @@
-describe('My first simple test with Cypress', () => {
-    it('True should be true', () => {
-        expect(true).to.eq(true);
+describe('Browser actions', () => {
+    it('should load the correct url', () => {
+        cy.visit("https://www.checkout.com/", {timeout: 10000 });
     });
 
-    it('5 should be 5', () => {
-        expect(5).to.eq(5);
+    it('should check the correct url', () => {
+        cy.url().should('include', 'checkout');
     });
-});
 
-describe('Another describe block', () => {
-    it('false to be false', () => {
-        expect(false).to.eq(false);
+    it('should check for correct url', () => {
+        cy.get('#revolving-text > h1.GeneralStylesc__Heading1-s1al9y-1.cZSkBk').should('be.visible');  
     });
 });
