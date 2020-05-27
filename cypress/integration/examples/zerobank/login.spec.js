@@ -1,4 +1,11 @@
 describe('Working with inputs', () => {
+    it('should override the current time', () => {
+        //return a timestamp
+        const date = new Date(2020, 5, 28).getTime();
+        cy.clock(date);
+        cy.log(date);
+    });
+    
     it('should visit zero bank login page', () => {
         cy.visit('http://zero.webappsecurity.com/login.html');
         cy.clearCookies({ log: true });
