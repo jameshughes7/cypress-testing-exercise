@@ -1,6 +1,8 @@
 describe('Working with inputs', () => {
     it('should visit zero bank login page', () => {
         cy.visit('http://zero.webappsecurity.com/login.html');
+        cy.clearCookies({ log: true });
+        cy.clearLocalStorage('your item in local storage', { log: true });
     });
 
     it('should fill username', () => {
@@ -27,7 +29,8 @@ describe('Working with inputs', () => {
     });
 
     it('should display error message', () => {
-        cy.get('.alert-error').should('be.visible')
+        cy.get('.alert-error')
+        .should('be.visible')
         .and('contain', 'Login and/or password are wrong.');
     });
 });
