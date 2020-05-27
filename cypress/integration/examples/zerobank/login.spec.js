@@ -13,6 +13,13 @@ describe('Working with inputs', () => {
         cy.get('#user_password').type('Some invalid password', { delay: 50 });
     });
 
+    it('should tick the keep me signed in checkbox', () => {
+        //element selector using id
+        cy.get('#user_remember_me').click();
+        //element selector using attribute
+        cy.get('input[type="checkbox"]').click();
+    });
+
     it('should submit login form', () => {
         cy.contains('Sign in').click();
     });
