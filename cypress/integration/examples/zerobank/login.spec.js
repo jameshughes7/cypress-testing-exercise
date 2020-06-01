@@ -29,12 +29,15 @@ describe('Working with inputs', () => {
     it('should tick the keep me signed in checkbox', () => {
         //element selector using id
         cy.get('#user_remember_me').click();
-        //element selector using attribute
+        //element selector using input element with type attribute
         cy.get('input[type="checkbox"]').click();
     });
 
     it('should submit login form', () => {
-        cy.contains('Sign in').click();
+        //element selector using element contains string
+        // cy.contains('Sign in').click();
+        //element selector using input element with value attribute
+        cy.get('input[value="Sign in"]').click();
     });
 
     it('should display error message', () => {
