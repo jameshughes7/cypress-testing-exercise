@@ -81,3 +81,14 @@
 
 * `index.js` file in support directory runs before every single spec file
 * custom commands can be run here or you can override existing commands from here as well
+
+### run cypress
+
+* To run cypress with browser:
+`npm run cy:open`
+
+* To run cypress in headless mode:
+`npm run cy:run`
+
+* To run a specific spec file:
+`npx cypress run --spec="cypress/integration/examples/testcafe_example/scroll.spec.js"`
