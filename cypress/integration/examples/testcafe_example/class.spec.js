@@ -40,7 +40,15 @@ describe('Abstraction with classes', () => {
         //runs after each it in the describe
     })
 
-    it('should scroll down and up the page', () => {
+    it.skip('1st it', () => {
+        HomePage.loadHomePage();
+        HomePage.scrollToBottom();
+        HomePage.wait(5000);
+        HomePage.scrollToTop();
+        HomePage.wait(3000);
+    });
+
+    it.only('2nd it', () => {
         HomePage.loadHomePage();
         HomePage.scrollToBottom();
         HomePage.wait(5000);
